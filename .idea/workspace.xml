@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a8dd41f0-6256-452c-9169-24de16dde470" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package.json" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/HexFusion" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/commands/moderation/kick.js" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/hexindex.js" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProjectId" id="1eef1xDXjrvd4E9w95ocoQ3ibAl" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.18.1" />
+    <property name="javascript.nodejs.core.library.typings.version" value="12.12.53" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.1.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nickj\Documents\HexFusion" />
+      <recent name="C:\Users\nickj\Documents\HexFusion\commands\moderation" />
+      <recent name="C:\Users\nickj\Documents\HexFusion\internals" />
+      <recent name="C:\Users\nickj\Documents\HexFusion\commands" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="NodeJSConfigurationType" path-to-js-file="$PROJECT_DIR$/hexindex.js">
+      <method v="2" />
+    </configuration>
+    <configuration name="hexindex.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="hexindex.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.hexindex.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a8dd41f0-6256-452c-9169-24de16dde470" name="Default Changelist" comment="" />
+      <created>1594686767877</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1594686767877</updated>
+      <workItem from="1594686770922" duration="13000" />
+      <workItem from="1594698654568" duration="2119000" />
+      <workItem from="1594712540602" duration="11000" />
+      <workItem from="1594712848231" duration="1664000" />
+      <workItem from="1594765755400" duration="1194000" />
+      <workItem from="1594790594442" duration="9150000" />
+      <workItem from="1594800919048" duration="14000" />
+      <workItem from="1594873422245" duration="1726000" />
+      <workItem from="1594944130058" duration="6655000" />
+      <workItem from="1594954345843" duration="9889000" />
+      <workItem from="1595031767063" duration="9415000" />
+      <workItem from="1595217326308" duration="3323000" />
+      <workItem from="1595230404366" duration="3354000" />
+      <workItem from="1595291868690" duration="9746000" />
+      <workItem from="1595370110676" duration="27226000" />
+      <workItem from="1595444584592" duration="13690000" />
+      <workItem from="1595462341795" duration="9817000" />
+      <workItem from="1595476805905" duration="7115000" />
+      <workItem from="1595537691400" duration="5567000" />
+      <workItem from="1595558171465" duration="3578000" />
+      <workItem from="1595567877362" duration="1282000" />
+      <workItem from="1595629823360" duration="14227000" />
+      <workItem from="1595714707528" duration="6149000" />
+      <workItem from="1595794084027" duration="5159000" />
+      <workItem from="1595823583087" duration="6319000" />
+      <workItem from="1595888673893" duration="7490000" />
+      <workItem from="1595904721253" duration="1178000" />
+      <workItem from="1595981822894" duration="953000" />
+      <workItem from="1595993397474" duration="1258000" />
+      <workItem from="1596058109564" duration="10225000" />
+      <workItem from="1596077442079" duration="5830000" />
+      <workItem from="1596089769847" duration="7402000" />
+      <workItem from="1596132427884" duration="14474000" />
+      <workItem from="1596163416353" duration="16168000" />
+      <workItem from="1596237691483" duration="1491000" />
+      <workItem from="1596241303719" duration="1948000" />
+      <workItem from="1596247242973" duration="2772000" />
+      <workItem from="1596323848715" duration="1135000" />
+      <workItem from="1596326269460" duration="1374000" />
+      <workItem from="1596342872139" duration="41000" />
+      <workItem from="1596397691432" duration="9176000" />
+      <workItem from="1596488758231" duration="2103000" />
+      <workItem from="1596493761391" duration="2616000" />
+      <workItem from="1596497220500" duration="5111000" />
+      <workItem from="1596581455109" duration="25408000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$/HexFusion" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="1" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="137" y="38" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594954423418">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="137" y="38" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1594954423418" />
+    <state x="394" y="173" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1596408612731">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="394" y="173" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.768@0.0.1366.768" timestamp="1596408612731" />
+    <state x="363" y="118" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1596496625239">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="363" y="118" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.768@0.0.1366.768" timestamp="1596496625239" />
+    <state x="463" y="138" key="FileChooserDialogImpl" timestamp="1596612148979">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="463" y="138" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1596612148979" />
+    <state x="484" y="301" key="Github.CreateGistDialog" timestamp="1596612039140">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="484" y="301" key="Github.CreateGistDialog/0.0.1366.768@0.0.1366.768" timestamp="1596612039140" />
+    <state width="1344" height="107" key="GridCell.Tab.0.bottom" timestamp="1596611971848">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1344" height="107" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1596611971848" />
+    <state width="1344" height="107" key="GridCell.Tab.0.center" timestamp="1596611971848">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1344" height="107" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1596611971848" />
+    <state width="1344" height="107" key="GridCell.Tab.0.left" timestamp="1596611971848">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1344" height="107" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1596611971848" />
+    <state width="1344" height="107" key="GridCell.Tab.0.right" timestamp="1596611971848">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1344" height="107" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1596611971848" />
+    <state x="184" y="28" key="SettingsEditor" timestamp="1596488801956">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="184" y="28" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1596488801956" />
+    <state x="0" y="0" width="593" height="768" key="find.popup" timestamp="1596151824521">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="0" y="0" width="593" height="768" key="find.popup/0.0.1366.768@0.0.1366.768" timestamp="1596151824521" />
+    <state x="400" y="191" key="jetbrains.nodejs.interpreters-dialog" timestamp="1594954411016">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="400" y="191" key="jetbrains.nodejs.interpreters-dialog/0.0.1366.768@0.0.1366.768" timestamp="1594954411016" />
+    <state x="339" y="172" width="672" height="677" key="run.anything.popup" timestamp="1596164506499">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="339" y="172" width="672" height="677" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1596164506499" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1596612111127">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1596612111127" />
+  </component>
+</project>
