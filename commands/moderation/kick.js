@@ -2,6 +2,9 @@
 // only available to moderators
 const Discord = require('discord.js');
 
+//TODO - Re-create the command.
+//TODO - More tests and refurbishes.
+
 // functions
 function sendFeedback(message, reason, memberID) {
     // act: send a feedback message to the command-use-logs
@@ -22,7 +25,7 @@ module.exports = {
     description: "Kick a user",
     argsreq: true,
     guildOnly: true,
-    execute: function (message, args, client) {
+    execute: async function (message, args, client) {
         // kick command source
         // variables
         const rolesCache = message.member.roles.cache; // get member roles cache

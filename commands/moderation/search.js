@@ -2,7 +2,10 @@
 // only available to moderators
 const Discord = require('discord.js');
 const SQLite = require("better-sqlite3");
-const sql1 = new SQLite('./DATA/infractions.sqlite');
+const sql1 = new SQLite('./internals/DATA/infractions.sqlite');
+
+//TODO - Re-create the command.
+//TODO - More tests and refurbishes.
 
 // main source
 module.exports = {
@@ -12,7 +15,7 @@ module.exports = {
     description: "View a users infractions",
     argsreq: true,
     guildOnly: true,
-    execute: function (message, args, client) {
+    execute: async function (message, args, client) {
         // infraction command source
         // variables
         const rolesCache = message.member.roles.cache; // get member roles cache

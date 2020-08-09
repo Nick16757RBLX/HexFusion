@@ -2,6 +2,9 @@
 // only available to moderators
 // functions
 
+//TODO - Re-create the command.
+//TODO - More tests and refurbishes.
+
 function sendFeedback(message, reason, memberID) {
     // act: send a feedback message to the command-use-logs
     const commandusechnn = message.guild.channels.cache.find(ch => ch.name === 'command-use-logs');
@@ -22,7 +25,7 @@ module.exports = {
     description: "Logs a warning for a user",
     argsreq: true,
     guildOnly: true,
-    execute: function (message, args, client) {
+    execute: async function (message, args, client) {
         // warn command source
         // variables
         const rolesCache = message.member.roles.cache; // get member roles cache

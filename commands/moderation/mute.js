@@ -3,6 +3,9 @@
 const Discord = require('discord.js');
 const ms = require('ms');
 
+//TODO - Re-create the command.
+//TODO - More tests and refurbishes.
+
 // functions
 function sendFeedback(message, reason, memberID) {
     // act: send a feedback message to the command-use-logs
@@ -24,7 +27,7 @@ module.exports = {
     description: "Mutes a user for a defined time",
     argsreq: true,
     guildOnly: true,
-    execute: function (message, args, client) {
+    execute: async function (message, args, client) {
         // mute command source
         // variables
         const rolesCache = message.member.roles.cache; // get member roles cache

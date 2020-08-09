@@ -3,6 +3,9 @@
 const Discord = require('discord.js');
 const crteEmbed = new Discord.MessageEmbed(); // create a new embed message
 
+//TODO - Re-create the command.
+//TODO - More tests and refurbishes.
+
 // functions
 function sendFeedback(message) {
     // act: send a feedback message to the command-use-logs
@@ -65,7 +68,7 @@ module.exports = {
     description: "View a users infractions",
     argsreq: true,
     guildOnly: true,
-    execute: function (message, args, client) {
+    execute: async function (message, args, client) {
         // info command source
         // variables
         const rolesCache = message.member.roles.cache; // get member roles cache

@@ -3,6 +3,9 @@
 // functions
 const Discord = require(`discord.js`);
 
+//TODO - Re-create the command.
+//TODO - More tests and refurbishes.
+
 function sendFeedback(message, memberID) {
     // act: send a feedback message to the command-use-logs
     const commandusechnn = message.guild.channels.cache.find(ch => ch.name === 'command-use-logs');
@@ -25,7 +28,7 @@ module.exports = {
     description: "Unmutes a user",
     argsreq: true,
     guildOnly: true,
-    execute: function (message, args, client) {
+    execute: async function (message, args, client) {
         // unmute command source
         // variables
         const rolesCache = message.member.roles.cache; // get member roles cache

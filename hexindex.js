@@ -3,29 +3,18 @@
 // manages all bot commands/functions
 const fs = require('fs');
 const Discord = require('discord.js');
+const dbSetup = require(`./handlers/dbSetup`);
 const { prefix, token, allowedchannels } = require('./internals/configuration.json') // configuration file for the bot
 const client = new Discord.Client();
 
 client.commands = new Discord.Collection();
 
+dbSetup.setupDatabase();
+dbSetup.setClientCommands(client);
+
 ["command"].forEach(handler => {
-    require(`./internals/handlers`)(client);
+    require(`./handlers/command`)(client);
 });
-
-["dbSetup"](handler => {
-    require(`./internals/handlers/dbSetup`)(client);
-})
-
-// Other functions and commands
-function getArgs(message) {
-    // check if the args exist
-    try {
-        return message.content.slice(prefix.length).trim().split(" ");
-    } catch (e) {
-        return console.log(`An error occured while getting the arguments for: ${message}`);
-    }
-}
-
 
 // bot events/functions
 client.on('ready', () => {
@@ -37,7 +26,7 @@ client.on('message', async message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
     // const variables
     const currentChannel = message.channel.id; // get the current channels id
-    const args = getArgs(message);
+    const args = message.content.slice(prefix.length).trim().split(" ");
     const commandName = args.shift().toLowerCase(); // make the command lowercase
     const command = client.commands.get(commandName); // gets the current command specified by the args
     const commChannel = message.member.guild.channels.cache.find(ch => ch.id === allowedchannels[0] || ch.id === allowedchannels[1] || ch.id === allowedchannels[2]); // get the moderation channel
@@ -72,10 +61,11 @@ client.on('message', async message => {
 
     try {
         const exeCom = await command
-        exeCom.execute(message, arguments, client); // run the command
+        exeCom.execute(message, args, client); // run the command
     } catch (error) {
         // log the error to the console
-        console.log(`An error occured while processing the command ${command}`);
+        console.log(`An error occured while processing the command ${command.name}`);
+        console.log(error);
         sendFeedback();
     }
 })

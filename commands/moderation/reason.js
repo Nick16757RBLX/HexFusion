@@ -1,8 +1,11 @@
 // reason command
 // only available to moderators
-const Discord = require('discord.js');
 const SQLite = require("better-sqlite3");
-const sql1 = new SQLite('./DATA/infractions.sqlite');
+const sql1 = new SQLite('./internals/DATA/infractions.sqlite');
+
+
+//TODO - Re-create the command.
+//TODO - More tests and refurbishes.
 
 // functions
 function sendFeedback(message) {
@@ -22,7 +25,7 @@ module.exports = {
     description: "Update an infractions reason",
     argsreq: true,
     guildOnly: true,
-    execute: function (message, args, client) {
+    execute: async function (message, args, client) {
         // reason command source
         // variables
         const rolesCache = message.member.roles.cache; // get member roles cache

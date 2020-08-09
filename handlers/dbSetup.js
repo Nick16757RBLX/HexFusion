@@ -5,7 +5,9 @@ const sql1 = new SQLite('./internals/DATA/infractions.sqlite');
 const sql2 = new SQLite('./internals/DATA/datavals.sqlite');
 const sql3 = new SQLite('./internals/DATA/userdta.sqlite');
 
-function setupDatabase() {
+var methods = {};
+
+methods.setupDatabase = function () {
     // create data tables
     const infractiondata = sql1.prepare("SELECT count(*) FROM sqlite_master WHERE type='table' AND name = 'infractions';").get();
     const datavalues = sql2.prepare("SELECT count(*) FROM sqlite_master WHERE type='table' AND name = 'datavalues';").get();
@@ -32,7 +34,7 @@ function setupDatabase() {
     }
 }
 
-function setClientCommands(client) {
+methods.setClientCommands = function (client) {
     // act: setup the client commands for sql data or externals
     client.getInfs = sql1.prepare("SELECT * FROM infractions WHERE id = ?");
     client.setInfs = sql1.prepare("INSERT INTO infractions (id, user, userID, reason, casenum, mod, modID, type, time, timestamp) VALUES (@id, @user, @userID, @reason, @casenum, @mod, @modID, @type, @time, @timestamp);");
@@ -43,9 +45,4 @@ function setClientCommands(client) {
     client.setInfrs = sql3.prepare("INSERT OR REPLACE INTO userdta (id, infractions) VALUES (@id, @infractions);");
 }
 
-module.exports = (client) => {
-    // Database setup + setup the databases and tables within them
-    setupDatabase();
-    setClientCommands(client);
-    console.log(`Finished setting up databases`);
-}
+module.exports = methods;
