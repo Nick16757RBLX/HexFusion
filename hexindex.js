@@ -3,67 +3,84 @@
 // manages all bot commands/functions
 const fs = require('fs');
 const Discord = require('discord.js');
-const SQLite = require("better-sqlite3");
-const sql1 = new SQLite('./DATA/infractions.sqlite');
-const sql2 = new SQLite('./DATA/datavals.sqlite');
-const sql3 = new SQLite('./DATA/userdta.sqlite');
-const { prefix, token } = require('./internals/configuration.json') // configuration file for the bot
-
+const { prefix, token, allowedchannels } = require('./internals/configuration.json') // configuration file for the bot
 const client = new Discord.Client();
+
 client.commands = new Discord.Collection();
 
 ["command"].forEach(handler => {
-    require(`./handlers/${handler}`)(client);
+    require(`./internals/handlers`)(client);
 });
+
+["dbSetup"](handler => {
+    require(`./internals/handlers/dbSetup`)(client);
+})
+
+// Other functions and commands
+function getArgs(message) {
+    // check if the args exist
+    try {
+        return message.content.slice(prefix.length).trim().split(" ");
+    } catch (e) {
+        return console.log(`An error occured while getting the arguments for: ${message}`);
+    }
+}
+
 
 // bot events/functions
 client.on('ready', () => {
     console.log(`I\'m online now. Any bugs/errors will be reported here!`);
-    function setupSQLData() {
-        // create data tables
-        const infractiondata = sql1.prepare("SELECT count(*) FROM sqlite_master WHERE type='table' AND name = 'infractions';").get();
-        const datavalues = sql2.prepare("SELECT count(*) FROM sqlite_master WHERE type='table' AND name = 'datavalues';").get();
-        const userdata = sql3.prepare("SELECT count(*) FROM sqlite_master WHERE type='table' AND name = 'userdta';").get();
-
-        // create datas
-        if (!infractiondata['count(*)']) {
-            // create infractions data
-            sql1.prepare("CREATE TABLE infractions (id TEXT, user TEXT, userID TEXT, reason TEXT, casenum INTEGER PRIMARY KEY, mod TEXT, modID TEXT, type TEXT, time TEXT, timestamp TEXT);").run();
-            // create a new insert that is unique, ensure it is unique or it won't work
-            sql1.prepare("CREATE UNIQUE INDEX idx_infractions_casenum ON infractions (casenum);").run();
-        }
-        if (!datavalues['count(*)']) {
-            // create infractions data
-            sql2.prepare("CREATE TABLE datavalues (id TEXT PRIMARY KEY, cases INTEGER);").run();
-            // create a new insert that is unique, ensure it is unique or it won't work
-            sql2.prepare("CREATE UNIQUE INDEX idx_datavalues_id ON datavalues (id);").run();
-        }
-        if (!userdata['count(*)']) {
-            // create infractions data
-            sql3.prepare("CREATE TABLE userdta (id TEXT PRIMARY KEY, infractions INTEGER);").run();
-            // create a new insert that is unique, ensure it is unique or it won't work
-            sql3.prepare("CREATE UNIQUE INDEX idx_userdta_id ON userdta (id);").run();
-        }
-
-    }
-
-    function setClientCommands() {
-        // act: setup the client commands for sql data or externals
-        client.getInfs = sql1.prepare("SELECT * FROM infractions WHERE id = ?");
-        client.setInfs = sql1.prepare("INSERT INTO infractions (id, user, userID, reason, casenum, mod, modID, type, time, timestamp) VALUES (@id, @user, @userID, @reason, @casenum, @mod, @modID, @type, @time, @timestamp);");
-        client.updInfs = sql1.prepare("REPLACE INTO infractions (id, user, userID, reason, casenum, mod, modID, type, time, timestamp) VALUES (@id, @user, @userID, @reason, @casenum, @mod, @modID, @type, @time, @timestamp);");
-        client.getDta = sql2.prepare("SELECT * FROM datavalues WHERE id = ?");
-        client.setDta = sql2.prepare("INSERT OR REPLACE INTO datavalues (id, cases) VALUES (@id, @cases);");
-        client.getInfrs = sql3.prepare("SELECT * FROM userdta WHERE id = ?");
-        client.setInfrs = sql3.prepare("INSERT OR REPLACE INTO userdta (id, infractions) VALUES (@id, @infractions);");
-    }
-
-    setupSQLData(); // act: setup the sql data for the server
-    setClientCommands(); // act: set the client commands
-
 })
 
-client.on('message', message => {
+client.on('message', async message => {
+    // main executor
+    if (!message.content.startsWith(prefix) || message.author.bot) return;
+    // const variables
+    const currentChannel = message.channel.id; // get the current channels id
+    const args = getArgs(message);
+    const commandName = args.shift().toLowerCase(); // make the command lowercase
+    const command = client.commands.get(commandName); // gets the current command specified by the args
+    const commChannel = message.member.guild.channels.cache.find(ch => ch.id === allowedchannels[0] || ch.id === allowedchannels[1] || ch.id === allowedchannels[2]); // get the moderation channel
+    const argsCount = await command.usage.split(" ").length; // get the required arguments count
+
+    // internal functions
+    function sendFeedback() {
+        // act: send an error message to the command-use-logs
+        const emoji = message.guild.emojis.cache.find(em => em.name === 'tickno');
+        const channel = message.guild.channels.cache.find(ch => ch.name === 'command-use-logs');
+        if (!channel) return;
+
+        message.channel.send(`${emoji} An error occured with the command ${command.name}. Try again later!`);
+        return channel.send(`:exclamation: an **error** occured with the command **${command.name}**`);
+    }
+
+    function checkChannelRestrictions() {
+        // get all channels and check if the channel is available for text
+        if (currentChannel !== commChannel.id) return message.delete();
+    }
+
+    // check if the command exists
+    if (!command) return;
+    if (command.argsreq && !args.length && currentChannel === commChannel.id || args.length < command.usage.split(" ").length && command.argsreq && currentChannel === commChannel.id) {
+        return message.channel.send(`Command \`${command.name}\` requires \`${argsCount}\` arguments (\`${command.usage}\`) passed \`${args.length}\``);
+    }
+    if (command.guildOnly && message.channel.type !== 'text') return; // prevent commands inside DMs
+
+    checkChannelRestrictions(); // check channel restrictions
+
+    // run the command sent
+
+    try {
+        const exeCom = await command
+        exeCom.execute(message, arguments, client); // run the command
+    } catch (error) {
+        // log the error to the console
+        console.log(`An error occured while processing the command ${command}`);
+        sendFeedback();
+    }
+})
+
+/*client.on('message', message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
     // variables
     const currentChannel = message.channel.id; // get the current channels id
@@ -97,7 +114,7 @@ client.on('message', message => {
 
     if (command.guildOnly && message.channel.type !== 'text') return message.reply('I can\'t execute that command inside DMs!');
 
-    checkChannelRestrictions();
+    checkChannelRestrictions(); // check restrictions
 
     try {
         command.execute(message, args, client); // fire command
@@ -106,7 +123,7 @@ client.on('message', message => {
         console.log(e);
         sendFeedback();
     }
-})
+})*/
 
 client.on('messageDelete', message => {
     // act: when a message is deleted, send a message to the message-logs
