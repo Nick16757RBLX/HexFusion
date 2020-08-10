@@ -9,14 +9,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/commands/moderation/info.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/moderation/info.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/commands/moderation/kick.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/moderation/kick.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands/moderation/mute.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/moderation/mute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands/moderation/reason.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/moderation/reason.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands/moderation/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/moderation/search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands/moderation/unmute.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/moderation/unmute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands/moderation/warn.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/moderation/warn.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hexindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/hexindex.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internals/handlers/command.js" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/command.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internals/handlers/dbSetup.js" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/dbSetup.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +25,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="PlexFusion" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
@@ -139,7 +137,8 @@
       <workItem from="1596659298990" duration="5862000" />
       <workItem from="1596768541701" duration="1272000" />
       <workItem from="1596929698271" duration="213000" />
-      <workItem from="1596942676396" duration="11732000" />
+      <workItem from="1596942676396" duration="11827000" />
+      <workItem from="1597016826416" duration="6504000" />
     </task>
     <task id="LOCAL-00001" summary="Work?">
       <created>1596620452947</created>
@@ -183,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596958321146</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Finishing touches for 8/9/2020 1:57 AM - Continue tomorrow with more fixes">
+      <created>1596963513994</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1596963513994</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,7 +236,8 @@
     <MESSAGE value="Work?" />
     <MESSAGE value="Work????" />
     <MESSAGE value="Updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updates" />
+    <MESSAGE value="Finishing touches for 8/9/2020 1:57 AM - Continue tomorrow with more fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finishing touches for 8/9/2020 1:57 AM - Continue tomorrow with more fixes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="38" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594954423418">
@@ -245,10 +252,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="363" y="118" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.768@0.0.1366.768" timestamp="1596496625239" />
-    <state x="266" y="0" key="CommitChangelistDialog2" timestamp="1596958316582">
+    <state x="266" y="0" key="CommitChangelistDialog2" timestamp="1596963511849">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="266" y="0" key="CommitChangelistDialog2/0.0.1366.768@0.0.1366.768" timestamp="1596958316582" />
+    <state x="266" y="0" key="CommitChangelistDialog2/0.0.1366.768@0.0.1366.768" timestamp="1596963511849" />
     <state x="463" y="138" key="FileChooserDialogImpl" timestamp="1596944578056">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -265,22 +272,22 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="483" y="0" key="Github.UntrackedFilesDialog/0.0.1366.768@0.0.1366.768" timestamp="1596613161797" />
-    <state width="1344" height="157" key="GridCell.Tab.0.bottom" timestamp="1596963314485">
+    <state width="1344" height="281" key="GridCell.Tab.0.bottom" timestamp="1597034899441">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1344" height="157" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1596963314485" />
-    <state width="1344" height="157" key="GridCell.Tab.0.center" timestamp="1596963314484">
+    <state width="1344" height="281" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1597034899441" />
+    <state width="1344" height="281" key="GridCell.Tab.0.center" timestamp="1597034899441">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1344" height="157" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1596963314484" />
-    <state width="1344" height="157" key="GridCell.Tab.0.left" timestamp="1596963314484">
+    <state width="1344" height="281" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1597034899441" />
+    <state width="1344" height="281" key="GridCell.Tab.0.left" timestamp="1597034899441">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1344" height="157" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1596963314484" />
-    <state width="1344" height="157" key="GridCell.Tab.0.right" timestamp="1596963314484">
+    <state width="1344" height="281" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1597034899441" />
+    <state width="1344" height="281" key="GridCell.Tab.0.right" timestamp="1597034899441">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1344" height="157" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1596963314484" />
+    <state width="1344" height="281" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1597034899441" />
     <state width="1344" height="230" key="GridCell.Tab.1.bottom" timestamp="1596832817457">
       <screen x="0" y="0" width="1366" height="768" />
     </state>

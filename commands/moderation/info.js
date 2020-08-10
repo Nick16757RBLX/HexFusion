@@ -1,19 +1,13 @@
 // info command
 // only available to moderators
 const Discord = require('discord.js');
+const logHandler = require("../../handlers/logHandler");
 const crteEmbed = new Discord.MessageEmbed(); // create a new embed message
 
 //TODO - Re-create the command.
 //TODO - More tests and refurbishes.
 
 // functions
-function sendFeedback(message) {
-    // act: send a feedback message to the command-use-logs
-    const commandusechnn = message.guild.channels.cache.find(ch => ch.name === 'command-use-logs');
-    if (!commandusechnn) return;
-
-    commandusechnn.send(`:wrench: **${message.author.tag}** (\`${message.author.id}\`) used command in **${message.channel}** (\`${message.channel.id}\`): \`${message.content}\``);
-}
 
 function getNormalInformation(message, memberID) {
     // act: get a normal users information, has no infraction history
@@ -94,8 +88,8 @@ module.exports = {
             // send a brief overview of a bots information
             getBotInformation(message, memberID);
         }
-        // send an embedded message\
-        sendFeedback(message);
+        // send an embedded message
+        logHandler.logFeedback(message);
         return message.channel.send(crteEmbed); // send an embedded message
     }
 }

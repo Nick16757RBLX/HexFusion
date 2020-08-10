@@ -5,19 +5,6 @@ const Discord = require('discord.js');
 //TODO - Re-create the command.
 //TODO - More tests and refurbishes.
 
-// functions
-function sendFeedback(message, reason, memberID) {
-    // act: send a feedback message to the command-use-logs
-    const commandusechnn = message.guild.channels.cache.find(ch => ch.name === 'command-use-logs');
-    const punishmentchnn = message.guild.channels.cache.find(ch => ch.name === 'punishment-logs');
-    if (!commandusechnn) return;
-    if (!punishmentchnn) return;
-
-    // send feedback messages to the logs
-    punishmentchnn.send(`:boot: **${memberID.user.tag}** (\`${memberID.user.id}\`) was kicked by **${message.author.tag}**: \`${reason}\``);
-    commandusechnn.send(`:wrench: **${message.author.tag}** (\`${message.author.id}\`) used command in **${message.channel}** (\`${message.channel.id}\`): \`${message.content}\``);
-}
-
 module.exports = {
     name: "kick",
     category: "moderation",
