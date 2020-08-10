@@ -36,7 +36,7 @@ module.exports = {
             let userinfs = client.getInfrs.get(memberID.user.id); // get the users infractions and check if they have any
 
             // perform: checks to see whether something exists
-            if (!memberID) return message.channel.send(`:no_entry_sign: cannot connect \`${args[1]}\` with \`user_id\``);
+            if (!memberID) return message.channel.send(`:no_entry_sign: cannot connect \`${args[0]}\` with \`user_id\``);
             if (!userinfs) return message.channel.send(`Couldn't find any infractions.`);
 
             // perform: create an embed message
@@ -63,7 +63,7 @@ module.exports = {
         }
 
         // perform the search command
-        subCommandSearch()
+        subCommandSearch();
 
     }
 }

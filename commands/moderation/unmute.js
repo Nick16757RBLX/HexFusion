@@ -1,24 +1,10 @@
 // mute command
 // only available to moderators
 // functions
-const Discord = require(`discord.js`);
+const logHandler = require('../../handlers/logHandler');
 
 //TODO - Re-create the command.
 //TODO - More tests and refurbishes.
-
-function sendFeedback(message, memberID) {
-    // act: send a feedback message to the command-use-logs
-    const commandusechnn = message.guild.channels.cache.find(ch => ch.name === 'command-use-logs');
-    const punishmentchnn = message.guild.channels.cache.find(ch => ch.name === 'punishment-logs');
-    const infractionschnn = message.guild.channels.cache.find(ch => ch.name === 'infraction-information');
-    if (!commandusechnn) return;
-    if (!punishmentchnn) return;
-    if (!infractionschnn) return;
-
-    // send feedback messages to the logs
-    punishmentchnn.send(`:open_mouth: **${memberID.user.tag}** (\`${memberID.user.id}\`) was unmuted by **${message.author.tag}**`);
-    commandusechnn.send(`:wrench: **${message.author.tag}** (\`${message.author.id}\`) used command in **${message.channel}** (\`${message.channel.id}\`): \`${message.content}\``);
-}
 
 // main source
 module.exports = {
@@ -53,7 +39,7 @@ module.exports = {
 
         // send feedback message
         removeMuteFromUser(); // act: remove the users mute
-        sendFeedback(message, memberID); // act: send feedback message
+        logHandler.logPunishment(message, "", memberID, "unmuted");
 
         return message.channel.send(`:ok_hand: ${memberID.user.tag} is now unmuted`);
     }

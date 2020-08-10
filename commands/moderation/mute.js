@@ -1,23 +1,11 @@
 // mute command
 // only available to moderators
-const Discord = require('discord.js');
+const logHandler = require('../../handlers/logHandler');
+const InfHandle = require('../../handlers/InfHandle');
 const ms = require('ms');
 
 //TODO - Re-create the command.
 //TODO - More tests and refurbishes.
-
-// functions
-function sendFeedback(message, reason, memberID) {
-    // act: send a feedback message to the command-use-logs
-    const commandusechnn = message.guild.channels.cache.find(ch => ch.name === 'command-use-logs');
-    const punishmentchnn = message.guild.channels.cache.find(ch => ch.name === 'punishment-logs');
-    if (!commandusechnn) return;
-    if (!punishmentchnn) return;
-
-    // send feedback messages to the logs
-    punishmentchnn.send(`:zipper_mouth: **${memberID.user.tag}** (\`${memberID.user.id}\`) was muted by **${message.author.tag}**: \`${reason}\``);
-    commandusechnn.send(`:wrench: **${message.author.tag}** (\`${message.author.id}\`) used command in **${message.channel}** (\`${message.channel.id}\`): \`${message.content}\``);
-}
 
 // main source
 module.exports = {
@@ -46,41 +34,11 @@ module.exports = {
         if (message.member.roles.cache.some(r => r.name === 'Chat Moderator' || r.name === 'Secret') && memberID.roles.cache.some(r => r.name === 'Chat Moderator' || r.name === 'Secret')) return;
         if (message.member.roles.cache.some(r => r.name === 'lead') && memberID.roles.cache.some(r => r.name === 'lead')) return;
 
-        // perform a check and see if the user is already muted
-        let infractions;
-        let cases;
-        let userinfs;
-
-        function setCases() {
-            // sets the amount of cases
-            cases = client.getDta.get(message.guild.id); // get the cases and check if cases exists
-
-            if (!cases) {
-                // create cases
-                cases = {
-                    id: `${message.guild.id}`,
-                    cases: 0,
-                }
-            }
-            cases.cases++;
-        }
-
         async function setNewInfraction() {
             // places a new infraction on a user
-            infractions = client.getInfs.get(`${memberID.user.id}-${message.channel.guild.id}`);
+            InfHandle.IncrCases(message);
+            InfHandle.addNewInfraction(message, memberID, rreason, "mute", args[1]);
 
-            infractions = {
-                id: `${memberID.user.id}-${message.channel.guild.id}`,
-                user: memberID.user.username,
-                userID: memberID.user.id,
-                reason: rreason,
-                casenum: cases.cases,
-                mod: message.author.username,
-                modID: message.author.id,
-                type: 'Mute',
-                time: args[1],
-                timestamp: message.createdAt.toDateString(),
-            }
             // end infraction creation, set time for the user
             let muteTime = args[1];
             let muteRole = message.guild.roles.cache.find(r => r.name === "Muted");
@@ -95,9 +53,7 @@ module.exports = {
             await (memberID.roles.add(muteRole));
             console.log(`${memberID.user.tag} was muted for ${ms(muteTime)}`);
 
-            // add an infraction to a user, mute the user
-            muteDur = muteTime;
-            infractions.time = muteTime;
+            // mute the user for given time
 
             setTimeout(function() {
                 // set the users timeout time
@@ -106,29 +62,9 @@ module.exports = {
 
         }
 
-        function setUserInfs() {
-            // sets the users infractions
-            userinfs = client.getInfrs.get(memberID.user.id); // get the users infractions and check if they have any
-
-            if (!userinfs) {
-                // create user infractions
-                userinfs = {
-                    id: memberID.user.id,
-                    infractions: 0,
-                }
-            }
-            userinfs.infractions++; // increase the infraction count
-        }
-
         // finish processing the command
-        setCases();
-        setNewInfraction();
-        setUserInfs();
-        sendFeedback(message, rreason, memberID);
-
-        client.setDta.run(cases);
-        client.setInfrs.run(userinfs);
-        client.setInfs.run(infractions);
+        await setNewInfraction();
+        logHandler.logPunishment(message, rreason, memberID, "muted");
 
         return message.channel.send(`:ok_hand: muted ${memberID.user.tag} for (\`${rreason}\`)`);
     }

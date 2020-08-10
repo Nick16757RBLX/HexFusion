@@ -8,7 +8,6 @@ const crteEmbed = new Discord.MessageEmbed(); // create a new embed message
 //TODO - More tests and refurbishes.
 
 // functions
-
 function getNormalInformation(message, memberID) {
     // act: get a normal users information, has no infraction history
     crteEmbed

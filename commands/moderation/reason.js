@@ -2,20 +2,11 @@
 // only available to moderators
 const SQLite = require("better-sqlite3");
 const sql1 = new SQLite('./internals/DATA/infractions.sqlite');
+const logHandler = require("../../handlers/logHandler");
 
 
 //TODO - Re-create the command.
 //TODO - More tests and refurbishes.
-
-// functions
-function sendFeedback(message) {
-    // act: send a feedback message to the command-use-logs
-    const commandusechnn = message.guild.channels.cache.find(ch => ch.name === 'command-use-logs');
-    if (!commandusechnn) return;
-
-    // send feedback messages to the logs
-    commandusechnn.send(`:wrench: **${message.author.tag}** (\`${message.author.id}\`) used command in **${message.channel}** (\`${message.channel.id}\`): \`${message.content}\``);
-}
 
 // main source
 module.exports = {
@@ -41,7 +32,7 @@ module.exports = {
         function subCommandSearch() {
             // search command, gets all infraction history from the user
             // create table index, index every case from 0-1
-            const userCases = sql1.prepare("SELECT * FROM infractions WHERE casenum = ? ORDER BY casenum DESC LIMIT 700;").all(args[0]);
+            const userCases = sql1.prepare("SELECT * FROM infractions WHERE casenum = ? ORDER BY casenum DESC LIMIT 1000;").all(args[0]);
 
             // perform: checks to see whether something exists
 
@@ -66,8 +57,7 @@ module.exports = {
         }
 
         // finish command process
-
-        sendFeedback(message);
+        logHandler.logFeedback(message);
         subCommandSearch();
 
     }
