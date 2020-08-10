@@ -4,8 +4,13 @@
 const fs = require('fs');
 const Discord = require('discord.js');
 const dbSetup = require(`./handlers/dbSetup`);
-const { prefix, token, allowedchannels } = require('./internals/configuration.json') // configuration file for the bot
+const { prefix, allowedchannels } = require('./internals/configuration.json') // configuration file for the bot
+require('dotenv-flow').config();
 const client = new Discord.Client();
+
+const config = {
+    token: process.env.TOKEN
+}
 
 client.commands = new Discord.Collection();
 
@@ -71,4 +76,4 @@ client.on('message', async message => {
     }
 })
 
-client.login(token); // bot login token
+client.login(config.token); // bot login token
