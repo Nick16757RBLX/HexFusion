@@ -15,10 +15,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Plexiimaniac/HexFusion"
+    "url": "git+https://github.com/Plexiimaniac/HexFusion.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node hexindex.js"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/Plexiimaniac/HexFusion/issues"
+  },
+  "homepage": "https://github.com/Plexiimaniac/HexFusion#readme",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
