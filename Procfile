@@ -1,1 +1,1 @@
-worker: node hexindex.js
+worker: npm start
