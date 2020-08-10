@@ -63,15 +63,26 @@
       <recent name="C:\Users\nickj\Documents\HexFusion\commands" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.start">
     <configuration default="true" type="NodeJSConfigurationType" path-to-js-file="$PROJECT_DIR$/hexindex.js">
       <method v="2" />
     </configuration>
     <configuration name="hexindex.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="hexindex.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.start" />
         <item itemvalue="Node.js.hexindex.js" />
       </list>
     </recent_temporary>
@@ -136,7 +147,7 @@
       <workItem from="1596768541701" duration="1272000" />
       <workItem from="1596929698271" duration="213000" />
       <workItem from="1596942676396" duration="11827000" />
-      <workItem from="1597016826416" duration="7340000" />
+      <workItem from="1597016826416" duration="8170000" />
     </task>
     <task id="LOCAL-00001" summary="Work?">
       <created>1596620452947</created>
@@ -194,7 +205,21 @@
       <option name="project" value="LOCAL" />
       <updated>1597035691995</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="New addons + updates">
+      <created>1597036462571</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1597036462571</updated>
+    </task>
+    <task id="LOCAL-00010" summary="New addons + updates">
+      <created>1597036565802</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1597036565802</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -258,10 +283,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="363" y="118" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.768@0.0.1366.768" timestamp="1596496625239" />
-    <state x="266" y="0" key="CommitChangelistDialog2" timestamp="1597035688986">
+    <state x="266" y="0" key="CommitChangelistDialog2" timestamp="1597036562274">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="266" y="0" key="CommitChangelistDialog2/0.0.1366.768@0.0.1366.768" timestamp="1597035688986" />
+    <state x="266" y="0" key="CommitChangelistDialog2/0.0.1366.768@0.0.1366.768" timestamp="1597036562274" />
     <state x="463" y="138" key="FileChooserDialogImpl" timestamp="1596944578056">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -278,22 +303,22 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="483" y="0" key="Github.UntrackedFilesDialog/0.0.1366.768@0.0.1366.768" timestamp="1596613161797" />
-    <state width="1344" height="281" key="GridCell.Tab.0.bottom" timestamp="1597034899441">
+    <state width="1344" height="228" key="GridCell.Tab.0.bottom" timestamp="1597036806264">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1344" height="281" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1597034899441" />
-    <state width="1344" height="281" key="GridCell.Tab.0.center" timestamp="1597034899441">
+    <state width="1344" height="228" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1597036806264" />
+    <state width="1344" height="228" key="GridCell.Tab.0.center" timestamp="1597036806263">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1344" height="281" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1597034899441" />
-    <state width="1344" height="281" key="GridCell.Tab.0.left" timestamp="1597034899441">
+    <state width="1344" height="228" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1597036806263" />
+    <state width="1344" height="228" key="GridCell.Tab.0.left" timestamp="1597036806263">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1344" height="281" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1597034899441" />
-    <state width="1344" height="281" key="GridCell.Tab.0.right" timestamp="1597034899441">
+    <state width="1344" height="228" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1597036806263" />
+    <state width="1344" height="228" key="GridCell.Tab.0.right" timestamp="1597036806264">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1344" height="281" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1597034899441" />
+    <state width="1344" height="228" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1597036806264" />
     <state width="1344" height="230" key="GridCell.Tab.1.bottom" timestamp="1596832817457">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -350,10 +375,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="184" y="28" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1596488801956" />
-    <state x="275" y="112" key="Vcs.Push.Dialog.v2" timestamp="1597035723829">
+    <state x="275" y="112" key="Vcs.Push.Dialog.v2" timestamp="1597036565931">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="275" y="112" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1597035723829" />
+    <state x="275" y="112" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1597036565931" />
     <state x="92" y="92" width="1182" height="584" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1596613194002">
       <screen x="0" y="0" width="1366" height="768" />
     </state>

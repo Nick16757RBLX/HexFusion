@@ -1,6 +1,7 @@
 {
   "name": "HexFusion",
   "version": "1.1.0",
+  "main": "hexindex.js",
   "dependencies": {
     "better-sqlite3": "^7.1.0",
     "discord.js": "^12.2.0",
@@ -10,6 +11,10 @@
   },
   "devDependencies": {
     "sqlite": "^4.0.11"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Plexiimaniac/HexFusion"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
