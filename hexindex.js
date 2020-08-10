@@ -4,6 +4,7 @@
 const fs = require('fs');
 const Discord = require('discord.js');
 const dbSetup = require(`./handlers/dbSetup`);
+const logHandler = require('./handlers/logHandler');
 const { prefix, allowedchannels } = require('./internals/configuration.json') // configuration file for the bot
 require('dotenv-flow').config();
 const client = new Discord.Client();
@@ -29,6 +30,7 @@ client.on('ready', () => {
 
 client.on('message', async message => {
     // main executor
+    //logHandler.getFiltered(message);
     if (!message.content.startsWith(prefix) || message.author.bot) return;
     // const variables
     const currentChannel = message.channel.id; // get the current channels id

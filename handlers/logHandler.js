@@ -8,6 +8,15 @@ const dbSetup = require(`./dbSetup`);
 
 // bot events/functions
 
+var bannedWords = [
+    "nigga",
+    "faggot",
+    "porn",
+    "xxx",
+    "pornhub",
+    "stupido",
+]
+
 client.on('messageDelete', message => {
     // act: when a message is deleted, send a message to the message-logs
     const channel = message.guild.channels.cache.find(ch => ch.name === 'message-logs');
@@ -44,6 +53,35 @@ methods.logPunishment = function (message, reason, memberID, type) {
     // send feedback messages to the logs
     punishmentchnn.send(`:boot: **${memberID.user.tag}** (\`${memberID.user.id}\`) was ${type} by **${message.author.tag}**: \`${reason}\``);
     commandusechnn.send(`:wrench: **${message.author.tag}** (\`${message.author.id}\`) used command in **${message.channel}** (\`${message.channel.id}\`): \`${message.content}\``);
+}
+
+methods.logCensored = function (message, blacklisted) {
+    // send a filtered message text to #censored-messages
+    // act: send a feedback message to the censored-messages
+    const censoredchnn = message.guild.channels.cache.find(ch => ch.name === 'censored-messages');
+    if (!censoredchnn) return;
+
+    return censoredchnn.send(`:no_entry_sign: censored message from ${message.author.tag} (\`${message.author.id}\`) in #${message.channel.name} with blacklisted item: ${blacklisted}\n\```${message}\````)
+}
+
+methods.getFiltered = async function (message) {
+    // check to see if the message contains a filtered message
+    let msg = message.content.toLowerCase();
+    let bypassChannels = message.guild.channels.cache.find(ch => ch.id === '739606541237223596' || ch.id === '726602878764187797' || ch.id === '721914589398171699' || ch.id === '721944921644335135');
+    let blacklisted = [];
+    let msgtemp;
+
+    for (x = 0; x < bannedWords.length; x++) {
+        //if (message.member.roles.cache.some(role => role.name === "lead" || message.member.hasPermission("ADMINISTRATOR"))) return;
+        console.log("pass1");
+        msgtemp = msg.includes(bannedWords[x]);
+        if (msg.includes(bannedWords[x]) || message.channel.id !== bypassChannels.id) {
+            console.log("pass2");
+            methods.logCensored(message, blacklisted);
+            blacklisted.push(msgtemp)
+            await message.delete();
+        }
+    }
 }
 
 module.exports = methods;

@@ -6,15 +6,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a8dd41f0-6256-452c-9169-24de16dde470" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/commands/moderation/ban.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/commands/moderation/duration.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/commands/utilities/clean.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/commands/utilities/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/commands/utilities/guildmembers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/commands/utilities/serverinfo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands/moderation/info.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/moderation/info.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands/moderation/kick.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/moderation/kick.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands/moderation/mute.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/moderation/mute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands/moderation/reason.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/moderation/reason.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands/moderation/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/moderation/search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands/moderation/unmute.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/moderation/unmute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands/moderation/warn.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/moderation/warn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/InfHandle.js" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/InfHandle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/logHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/logHandler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hexindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/hexindex.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -252,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597040836287</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Some minor updates to the commands">
+      <created>1597049889186</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1597049889186</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,31 +303,33 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Work?" />
     <MESSAGE value="Work????" />
     <MESSAGE value="Updates" />
     <MESSAGE value="Finishing touches for 8/9/2020 1:57 AM - Continue tomorrow with more fixes" />
     <MESSAGE value="New addons + updates" />
     <MESSAGE value="Testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Testing" />
+    <MESSAGE value="Some minor updates to the commands" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some minor updates to the commands" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="38" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594954423418">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="137" y="38" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1594954423418" />
-    <state x="394" y="173" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1597039019112">
+    <state x="394" y="173" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1597050622105">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="394" y="173" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.768@0.0.1366.768" timestamp="1597039019112" />
+    <state x="394" y="173" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.768@0.0.1366.768" timestamp="1597050622105" />
     <state x="363" y="118" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1596496625239">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="363" y="118" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.768@0.0.1366.768" timestamp="1596496625239" />
-    <state x="266" y="0" key="CommitChangelistDialog2" timestamp="1597040834389">
+    <state x="266" y="0" key="CommitChangelistDialog2" timestamp="1597049886086">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="266" y="0" key="CommitChangelistDialog2/0.0.1366.768@0.0.1366.768" timestamp="1597040834389" />
+    <state x="266" y="0" key="CommitChangelistDialog2/0.0.1366.768@0.0.1366.768" timestamp="1597049886086" />
     <state x="463" y="138" key="FileChooserDialogImpl" timestamp="1596944578056">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -337,22 +346,22 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="483" y="0" key="Github.UntrackedFilesDialog/0.0.1366.768@0.0.1366.768" timestamp="1596613161797" />
-    <state width="1344" height="61" key="GridCell.Tab.0.bottom" timestamp="1597042321596">
+    <state width="1344" height="143" key="GridCell.Tab.0.bottom" timestamp="1597054817929">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1344" height="61" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1597042321596" />
-    <state width="1344" height="61" key="GridCell.Tab.0.center" timestamp="1597042321596">
+    <state width="1344" height="143" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1597054817929" />
+    <state width="1344" height="143" key="GridCell.Tab.0.center" timestamp="1597054817929">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1344" height="61" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1597042321596" />
-    <state width="1344" height="61" key="GridCell.Tab.0.left" timestamp="1597042321596">
+    <state width="1344" height="143" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1597054817929" />
+    <state width="1344" height="143" key="GridCell.Tab.0.left" timestamp="1597054817929">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1344" height="61" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1597042321596" />
-    <state width="1344" height="61" key="GridCell.Tab.0.right" timestamp="1597042321596">
+    <state width="1344" height="143" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1597054817929" />
+    <state width="1344" height="143" key="GridCell.Tab.0.right" timestamp="1597054817929">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state width="1344" height="61" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1597042321596" />
+    <state width="1344" height="143" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1597054817929" />
     <state width="1344" height="230" key="GridCell.Tab.1.bottom" timestamp="1596832817457">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -409,10 +418,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="184" y="28" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1596488801956" />
-    <state x="275" y="112" key="Vcs.Push.Dialog.v2" timestamp="1597042339792">
+    <state x="275" y="112" key="Vcs.Push.Dialog.v2" timestamp="1597049900626">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="275" y="112" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1597042339792" />
+    <state x="275" y="112" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1597049900626" />
     <state x="92" y="92" width="1182" height="584" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1596613194002">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -433,9 +442,9 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="339" y="172" width="672" height="677" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1596164506499" />
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1596962697977">
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1597049664404">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
-    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1596962697977" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1597049664404" />
   </component>
 </project>
