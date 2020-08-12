@@ -2,7 +2,7 @@
 // only available to moderators
 const SQLite = require("better-sqlite3");
 const sql1 = new SQLite('./internals/DATA/infractions.sqlite');
-const logHandler = require("../../handlers/logHandler");
+const logHandler = require("../../handlers/LogHandler");
 
 
 //TODO - Re-create the command.

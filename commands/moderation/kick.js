@@ -1,7 +1,7 @@
 // kick command
 // only available to moderators
 const Discord = require('discord.js');
-const logHandler = require('../../handlers/logHandler');
+const logHandler = require('../../handlers/LogHandler');
 const InfHandle = require('../../handlers/InfHandle');
 
 //TODO - Re-create the command.
@@ -34,8 +34,8 @@ module.exports = {
         if (message.member.roles.cache.some(r => r.name === 'lead') && memberID.roles.cache.some(r => r.name === 'lead')) return;
 
         // add an infraction
-        InfHandle.IncrCases(message);
-        InfHandle.addNewInfraction(message, memberID, rreason, "kick", "");
+        InfHandle.SetCases(client, message);
+        InfHandle.addNewInfraction(client, message, memberID, rreason, "kick", "");
         logHandler.logPunishment(message, rreason, memberID, "kicked");
 
         try {

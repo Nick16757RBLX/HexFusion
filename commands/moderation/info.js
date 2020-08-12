@@ -1,7 +1,7 @@
 // info command
 // only available to moderators
 const Discord = require('discord.js');
-const logHandler = require("../../handlers/logHandler");
+const logHandler = require("../../handlers/LogHandler");
 const crteEmbed = new Discord.MessageEmbed(); // create a new embed message
 
 //TODO - Re-create the command.

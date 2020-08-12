@@ -1,10 +1,8 @@
-// logHandler.js
+// LogHandler.js
 // handles and logs every actions on the server
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const { prefix } = require('../internals/configuration.json') // configuration file for the bot
-const dbSetup = require(`./dbSetup`);
-
 
 // bot events/functions
 

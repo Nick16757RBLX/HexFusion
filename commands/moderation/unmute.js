@@ -1,7 +1,7 @@
 // mute command
 // only available to moderators
 // functions
-const logHandler = require('../../handlers/logHandler');
+const logHandler = require('../../handlers/LogHandler');
 
 //TODO - Re-create the command.
 //TODO - More tests and refurbishes.

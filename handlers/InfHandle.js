@@ -1,16 +1,18 @@
 // InfHandler.js
 // Handles the creation of infraction data
 const Discord = require('discord.js');
-const client = new Discord.Client();
 
-var methods = {}
+var InfHandler = {}
 
-methods.addNewInfraction = function (message, memberID, reason, type, time) {
+InfHandler.addNewInfraction = function (client, message, memberID, reason, type, time) {
     // add a new infraction to the user: memberID
+    let infractions;
+    let userinfs;
+
     infractions = client.getInfs.get(`${memberID.user.id}-${message.channel.guild.id}`);
     cases = client.getDta.get(message.guild.id); // get the cases and check if cases exists
-    let userinfs;
-    let infractions;
+
+    // internal functions
 
     function setUserInfs() {
         // sets the users infractions
@@ -53,7 +55,7 @@ methods.addNewInfraction = function (message, memberID, reason, type, time) {
 
 }
 
-methods.IncrCases = function (message) {
+InfHandler.SetCases = function (client, message) {
     // add to the case count
     cases = client.getDta.get(message.guild.id); // get the cases and check if cases exists
 
@@ -69,4 +71,4 @@ methods.IncrCases = function (message) {
     client.setDta.run(cases);
 }
 
-module.exports = methods;
+module.exports = InfHandler;

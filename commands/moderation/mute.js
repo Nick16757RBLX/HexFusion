@@ -1,6 +1,6 @@
 // mute command
 // only available to moderators
-const logHandler = require('../../handlers/logHandler');
+const logHandler = require('../../handlers/LogHandler');
 const InfHandle = require('../../handlers/InfHandle');
 const ms = require('ms');
 
@@ -36,8 +36,8 @@ module.exports = {
 
         async function setNewInfraction() {
             // places a new infraction on a user
-            InfHandle.IncrCases(message);
-            InfHandle.addNewInfraction(message, memberID, rreason, "mute", args[1]);
+            InfHandle.SetCases(client, message);
+            InfHandle.addNewInfraction(client, message, memberID, rreason, "mute", args[1]);
 
             // end infraction creation, set time for the user
             let muteTime = args[1];

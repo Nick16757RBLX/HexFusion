@@ -1,11 +1,15 @@
 // warn command
 // only available to moderators
 // functions
-const logHandler = require('../../handlers/logHandler');
+const logHandler = require('../../handlers/LogHandler');
 const InfHandle = require('../../handlers/InfHandle');
 
 //TODO - Re-create the command.
 //TODO - More tests and refurbishes.
+
+function checkRolePermissions(message) {
+
+}
 
 // main source
 module.exports = {
@@ -36,8 +40,8 @@ module.exports = {
         if (message.member.roles.cache.some(r => r.name === 'lead') && memberID.roles.cache.some(r => r.name === 'lead')) return;
 
         // add an infraction
-        InfHandle.IncrCases(message);
-        InfHandle.addNewInfraction(message, memberID, rreason, "warn", "");
+        InfHandle.SetCases(client, message);
+        InfHandle.addNewInfraction(client, message, memberID, rreason, "warn", "");
         logHandler.logPunishment(message, rreason, memberID, "warned");
 
         return message.channel.send(`:ok_hand: warned ${memberID.user.tag} \`(${rreason})\``);

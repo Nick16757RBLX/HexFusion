@@ -3,8 +3,8 @@
 // manages all bot commands/functions
 const fs = require('fs');
 const Discord = require('discord.js');
-const dbSetup = require(`./handlers/dbSetup`);
-const logHandler = require('./handlers/logHandler');
+const dbSetup = require(`./handlers/DBSetup`);
+const logHandler = require('./handlers/LogHandler');
 const { prefix, allowedchannels } = require('./internals/configuration.json') // configuration file for the bot
 require('dotenv-flow').config();
 const client = new Discord.Client();
@@ -22,8 +22,8 @@ client.on('ready', () => {
     dbSetup.setupDatabase();
     dbSetup.setClientCommands(client);
 
-    ["command"].forEach(handler => {
-        require(`./handlers/command`)(client);
+    ["Setup"].forEach(handler => {
+        require(`./handlers/Setup`)(client);
     });
 
 })
