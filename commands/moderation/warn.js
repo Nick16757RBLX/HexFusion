@@ -42,7 +42,7 @@ module.exports = {
         // add an infraction
         InfHandle.SetCases(client, message);
         InfHandle.addNewInfraction(client, message, memberID, rreason, "warn", "");
-        logHandler.logPunishment(message, rreason, memberID, "warned");
+        logHandler.logPunishment(message);
 
         return message.channel.send(`:ok_hand: warned ${memberID.user.tag} \`(${rreason})\``);
     },

@@ -24,7 +24,6 @@ methods.setupDatabase = function () {
         sql1.prepare("CREATE UNIQUE INDEX idx_guildoptionsmods_roleid ON guildoptionsmods (roleid);").run();
         sql1.prepare("CREATE UNIQUE INDEX idx_guildoptions_id ON guildoptions (id);").run();
     }
-
 }
 
 methods.setClientCommands = function (client) {
@@ -39,7 +38,7 @@ methods.setClientCommands = function (client) {
     client.getRolePerms = sql1.prepare("SELECT * FROM guildoptionsmods WHERE id = ? AND roleid = ?");
     client.setRolePerms = sql1.prepare("INSERT OR REPLACE INTO guildoptionsmods (id, roleid, muteAllowed, kickAllowed, banAllowed, warnAllowed, durationAllowed, cleanAllowed, configAllowed, allowModificationOfOth) VALUES (@id, @roleid, @muteAllowed, @kickAllowed, @banAllowed, @warnAllowed, @durationAllowed, @cleanAllowed, @configAllowed, @allowModificationOfOth);")
     client.getGuildOptions = sql1.prepare("SELECT * FROM guildoptions WHERE id = ?");
-    client.setGuildOptions = sql1.prepare("REPLACE INTO guildoptions () VALUES ();");
+    client.setGuildOptions = sql1.prepare("REPLACE INTO guildoptions (id, commandsChannel, logsEnabled, punishChannel, comuseChannel, alertsChannel) VALUES (@id, @commandsChannel, @logsEnabled, @punishChannel, @comuseChannel, @alertsChannel);");
 }
 
 module.exports = methods;

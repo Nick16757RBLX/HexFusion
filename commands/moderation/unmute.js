@@ -39,7 +39,7 @@ module.exports = {
 
         // send feedback message
         removeMuteFromUser(); // act: remove the users mute
-        logHandler.logPunishment(message, "", memberID, "unmuted");
+        logHandler.logPunishment(message);
 
         return message.channel.send(`:ok_hand: ${memberID.user.tag} is now unmuted`);
     }

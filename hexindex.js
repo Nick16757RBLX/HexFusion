@@ -56,11 +56,12 @@ client.on('message', async message => {
         if (currentChannel !== commChannel.id) return message.delete();
     }
 
-    // check if the command exists
+    // check if the command existsd
     if (!command) return;
-    if (command.argsreq && !args.length && currentChannel === commChannel.id || args.length < command.usage.split(" ").length && command.argsreq && currentChannel === commChannel.id) {
+    if (args.length < command.usage.split(" ").length && command.argsreq && currentChannel === commChannel.id) {
         return message.channel.send(`Command \`${command.name}\` requires \`${argsCount}\` arguments (\`${command.usage}\`) passed \`${args.length}\``);
     }
+    if (currentChannel !== commChannel.id) return;
     if (command.guildOnly && message.channel.type !== 'text') return; // prevent commands inside DMs
 
     checkChannelRestrictions(); // check channel restrictions

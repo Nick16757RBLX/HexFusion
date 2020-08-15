@@ -36,7 +36,7 @@ module.exports = {
         // add an infraction
         InfHandle.SetCases(client, message);
         InfHandle.addNewInfraction(client, message, memberID, rreason, "kick", "");
-        logHandler.logPunishment(message, rreason, memberID, "kicked");
+        logHandler.logPunishment(message);
 
         try {
             // kick the member

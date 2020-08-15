@@ -23,6 +23,7 @@ module.exports = {
 
         let allowedRles = rolesCache.some(role => role.name === 'Chat Moderator' || role.name === 'lead');
         let rreason = args.slice(2).join(" "); // split the reason between args 1-2
+        let tempdata = []; // table to hold temporary data
 
         // mute a user + log the mute
         if (!args.length) return; // no arguments were provided, reject request*
@@ -54,7 +55,6 @@ module.exports = {
             console.log(`${memberID.user.tag} was muted for ${ms(muteTime)}`);
 
             // mute the user for given time
-
             setTimeout(function() {
                 // set the users timeout time
                 memberID.roles.remove(muteRole);
@@ -62,9 +62,10 @@ module.exports = {
 
         }
 
+
         // finish processing the command
         await setNewInfraction();
-        logHandler.logPunishment(message, rreason, memberID, "muted");
+        logHandler.logPunishment(message);
 
         return message.channel.send(`:ok_hand: muted ${memberID.user.tag} for (\`${rreason}\`)`);
     }

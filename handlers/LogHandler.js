@@ -41,15 +41,12 @@ methods.logFeedback = function (message) {
     commandusechnn.send(`:wrench: **${message.author.tag}** (\`${message.author.id}\`) used command in **${message.channel}** (\`${message.channel.id}\`): \`${message.content}\``);
 }
 
-methods.logPunishment = function (message, reason, memberID, type) {
+methods.logPunishment = function (message) {
     // act: send a feedback message to the command-use-logs
     const commandusechnn = message.guild.channels.cache.find(ch => ch.name === 'command-use-logs');
-    const punishmentchnn = message.guild.channels.cache.find(ch => ch.name === 'punishment-logs');
     if (!commandusechnn) return;
-    if (!punishmentchnn) return;
 
     // send feedback messages to the logs
-    punishmentchnn.send(`:boot: **${memberID.user.tag}** (\`${memberID.user.id}\`) was ${type} by **${message.author.tag}**: \`${reason}\``);
     commandusechnn.send(`:wrench: **${message.author.tag}** (\`${message.author.id}\`) used command in **${message.channel}** (\`${message.channel.id}\`): \`${message.content}\``);
 }
 
@@ -83,3 +80,6 @@ methods.getFiltered = async function (message) {
 }
 
 module.exports = methods;
+
+// create embed infraction
+
